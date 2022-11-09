@@ -1,0 +1,19 @@
+{
+  "name": "wittychat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.17.2",
+    "express-fileupload": "^1.2.1",
+    "gridfs-stream": "^1.1.1",
+    "mongoose": "^6.6.5",
+    "socket.io": "^4.4.1"
+  }
+}

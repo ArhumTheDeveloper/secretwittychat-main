@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Or Join Meeting</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"> <img src="./assets/images/Current Logo of Wittychat.png" class="logo" alt=""></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      link
+                    </a>
+                    
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                  </li>
+                </ul>
+               
+                    <button class="btn btn-outline-secondary btn-lg text-info font-weight-bold join-meeting" >Join the meeting</button>
+                    <button class="btn btn-lg btn-info text-light font-weight-bold new-meeting">Start a meeting</button>
+              
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <section class="main-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1> Premium video meeting. Now it is available for free to everyone. </h1>
+                    <div class="text-area">
+                        <p>  WittyChat is a new video chat developed by Arhum "Subhan" Raja and partially developed by Mohammed Maqbol.</p>
+                    </div>
+                   
+                </div>
+                <div class="col-md-6">
+                    <div class="image-section">
+                    <img src="./assets/images/google-meet-people.jpg" alt="" class="signin-image">
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="margin-top: 55px;">
+            <div class="row">
+                <div class="col-md-3">
+                    <button class="btn btn-lg text-light new-meeting" style="background-color: #01796b;width: 235px;"><i class="fa fa-video-camera">&nbsp;New Meeting</i></button>
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-lg btn-outline-secondary text-dark font-weight-bold display-center" style="background-color: #ffffff;"><span class="material-icons mr-2">keyboard</span><input type="text" placeholder="Enter a code" style="border: none;" class="enter-code"><a class="text-dark font-weight-bold cursor-pointer pl-2 join-action ">Join</a></button>         
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+    <footer class="bg-light text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);"> 
+          <!-- © 2022 Copyright:WittyChat -->
+       <a class="text-dark" href="#">Learn more about WittyChat</a>
+        </div>
+        <!-- Copyright -->
+     </footer>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <!-- <footer class="container-fluid"><h6> <span class="learn-more text-info"></span></h6></footer> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $(document).on("click", ".join-meeting", function(){
+                $(".enter-code").focus();
+            })
+            $(document).on("click", ".join-action", function(){
+                var join_value = $('.enter-code').val();
+                var meetingUrl = window.location.origin+"?meetingID="+join_value;
+                window.location.replace(meetingUrl);
+            })
+            $(document).on("click", ".new-meeting", function(){
+               var eight_d_value = Math.floor(Math.random()*100000000);
+                var meetingUrl = window.location.origin+"?meetingID="+eight_d_value;
+                window.location.replace(meetingUrl);
+            })
+
+        })
+    </script>
+</body>
+</html>
